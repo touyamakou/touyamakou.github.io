@@ -134,25 +134,6 @@ img { display: block; max-width: 100%; }
   color: #566272;
   font-size: 15px;
 }
-.rss-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  height: 34px;
-  padding: 0 11px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #fff;
-  color: #8a97a8;
-  font-size: 12px;
-  font-weight: 800;
-}
-.rss-chip:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
 .tabs-container { margin-top: 2px; }
 .tabs {
   overflow: visible;
@@ -275,38 +256,6 @@ img { display: block; max-width: 100%; }
 }
 .empty-state p { margin: 0; }
 
-.profile-card {
-  display: grid;
-  justify-items: center;
-  gap: 12px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #fff;
-  text-align: center;
-}
-.profile-card.compact {
-  position: sticky;
-  top: 78px;
-}
-.avatar {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.profile-info h2 {
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.35;
-}
-.profile-info .bio {
-  margin: 4px 0 0;
-  color: #718096;
-  font-size: 13px;
-}
-
-.post-shell,
 .page-shell {
   padding: 32px 0 72px;
 }
@@ -321,16 +270,6 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 .article-header.simple { text-align: left; }
-.article-emoji {
-  display: grid;
-  width: 92px;
-  height: 92px;
-  margin: 0 auto 18px;
-  place-items: center;
-  border-radius: var(--radius);
-  background: #f1f8ff;
-  font-size: 52px;
-}
 .article-header h1 {
   margin: 0;
   color: #202a36;
@@ -338,21 +277,6 @@ img { display: block; max-width: 100%; }
   font-weight: 800;
   line-height: 1.35;
   letter-spacing: 0;
-}
-.article-header p {
-  max-width: 640px;
-  margin: 14px auto 0;
-  color: #718096;
-  font-size: 16px;
-}
-.article-meta {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
-  color: #9aa7b5;
-  font-size: 13px;
-  font-weight: 700;
 }
 .article-body {
   padding: 16px 54px 56px;
@@ -485,8 +409,7 @@ img { display: block; max-width: 100%; }
   .post-card-link { min-height: auto; }
   .article-header { padding: 34px 24px 20px; }
   .article-body { padding: 12px 24px 42px; font-size: 16px; }
-  .article-emoji { width: 76px; height: 76px; font-size: 42px; }
-  .footer-inner { flex-direction: column; justify-content: center; }
+    .footer-inner { flex-direction: column; justify-content: center; }
 }
 /* Zenn-like article page */
 .zenn-article {
@@ -503,18 +426,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   text-align: center;
 }
-.zenn-article-header .article-emoji {
-  display: grid;
-  width: 112px;
-  height: 112px;
-  margin: 0 auto 20px;
-  place-items: center;
-  border-radius: 22px;
-  background: transparent;
-  font-size: 76px;
-  line-height: 1;
-}
-.zenn-article-header h1 {
+.zenn-article-header .zenn-article-header h1 {
   margin: 0;
   color: #202b3a;
   font-size: clamp(32px, 5.4vw, 48px);
@@ -784,13 +696,7 @@ img { display: block; max-width: 100%; }
   .zenn-article-header {
     padding: 34px 0 24px;
   }
-  .zenn-article-header .article-emoji {
-    width: 84px;
-    height: 84px;
-    margin-bottom: 14px;
-    font-size: 54px;
-  }
-  .zenn-article-header h1 {
+  .zenn-article-header   .zenn-article-header h1 {
     font-size: 30px;
   }
   .article-layout {

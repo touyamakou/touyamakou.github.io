@@ -7,19 +7,15 @@ baseurl: ""
 permalink: /posts/:title/
 
 brand:
-  title: "Zenn"
-  icon_text: "Z"
-  icon_image: ""
+  title: "Draft"
+  icon_text: "T"
+  icon_image: "/assets/images/logo.png"
   url: "/"
 
 profile:
   name: "touyama"
-  handle: "@touyama"
   bio: "\u30B2\u30FC\u30E0\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC"
   avatar: "https://static.zenn.studio/user-upload/avatar/2e5899f7fb.jpeg"
-  location: ""
-  links:
-    rss: "/feed.xml"
 
 defaults:
   - scope:

@@ -1,8 +1,0 @@
-<div class="profile-card {% if include.compact %}compact{% endif %}">
-  <img class="avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
-  <div class="profile-info">
-    <h2>{{ site.profile.name }}</h2>
-    <p class="bio">{{ site.profile.bio }}</p>
-  </div>
-  <a class="rss-chip" href="{{ site.profile.links.rss | default: '/feed.xml' | relative_url }}" aria-label="RSS feed">RSS</a>
-</div>
