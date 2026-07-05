@@ -1,0 +1,41 @@
+title: "My Zenn Style Blog"
+description: "Zenn-inspired personal blog built with Jekyll."
+lang: ko
+timezone: Asia/Tokyo
+url: ""
+baseurl: ""
+permalink: /posts/:title/
+
+profile:
+  name: "Your Name"
+  handle: "@your_handle"
+  bio: "개발, 글쓰기, 배움을 기록하는 개인 블로그입니다."
+  avatar: "/assets/images/avatar.svg"
+  location: "Tokyo / Seoul"
+  links:
+    github: "https://github.com/yourname"
+    x: "https://x.com/yourname"
+    website: "https://example.com"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Your Name"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

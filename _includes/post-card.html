@@ -1,0 +1,19 @@
+{% assign post = include.post %}
+<article class="post-card">
+  <a class="post-card-link" href="{{ post.url | relative_url }}">
+    <div class="post-emoji" aria-hidden="true">{{ post.emoji | default: '📘' }}</div>
+    <div class="post-card-body">
+      <div class="post-card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        {% if post.reading_time %}<span>{{ post.reading_time }}</span>{% endif %}
+      </div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description | default: post.excerpt | strip_html | truncate: 118 }}</p>
+      {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}<span>#{{ tag }}</span>{% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </a>
+</article>
