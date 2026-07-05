@@ -27,10 +27,24 @@ layout: default
     <div class="article-layout">
 
       <main class="article-card">
-        {% if page.tags %}
+        {% assign article_topics = page.topics | default: page.tags %}
+        {% if article_topics %}
           <section class="topic-widget" aria-label="Topics">
             <div class="article-topic-list">
-              {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+              {% for topic in article_topics %}
+                {% assign topic_name = topic.name | default: topic %}
+                {% assign topic_image = topic.image %}
+                <a class="topic-card" href="{{ '/tags/#' | relative_url }}{{ topic_name | slugify }}">
+                  <span class="topic-card-icon{% unless topic_image %} fallback{% endunless %}" aria-hidden="true">
+                    {% if topic_image %}
+                      <img src="{{ topic_image | relative_url }}" alt="">
+                    {% else %}
+                      {{ topic_name | slice: 0, 1 }}
+                    {% endif %}
+                  </span>
+                  <span class="topic-card-name">{{ topic_name }}</span>
+                </a>
+              {% endfor %}
             </div>
           </section>
         {% endif %}

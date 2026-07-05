@@ -22,7 +22,9 @@ brand:
   icon_image: "/assets/images/logo.png"
 
 social_preview:
-  image: "/assets/images/logo.png"
+  image: "/assets/images/og-default.png"
+  width: 1200
+  height: 630
 
 profile:
   name: "touyama"
@@ -30,4 +32,4 @@ profile:
   avatar: "/assets/images/avatar.jpg"
 ```
 
-Put local images under `assets/images/`. Posts can override the social preview image with `image: "/assets/images/post-image.png"` in front matter.
+Put local images under `assets/images/`. Posts can override the social preview image with `image: "/assets/images/post-image.png"` in front matter. For topic icons, use `topics:` with `name` and optional `image`.

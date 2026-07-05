@@ -13,7 +13,9 @@ brand:
   url: "/"
 
 social_preview:
-  image: "/assets/images/logo.png"
+  image: "/assets/images/og-default.png"
+  width: 1200
+  height: 630
 
 profile:
   name: "touyama"

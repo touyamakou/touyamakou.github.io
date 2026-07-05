@@ -449,24 +449,58 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
 }
 .topic-widget {
-  padding: 28px 58px 0;
+  padding: 24px 58px 0;
 }
 .article-topic-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-.article-topic-list a {
-  display: inline-flex;
+.topic-card {
+  display: inline-grid;
+  min-height: 32px;
+  grid-template-columns: 26px minmax(0, auto);
   align-items: center;
-  min-height: 30px;
-  padding: 0 12px;
+  gap: 7px;
+  border: 1px solid #e3ebf4;
   border-radius: 999px;
-  background: #f4f7fa;
-  border: 1px solid #dfe8f2;
+  background: #fff;
+  padding: 2px 11px 2px 2px;
+  color: #566575;
+  font-size: 12.8px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(47, 58, 69, .04);
+}
+.topic-card:hover {
+  border-color: rgba(62, 168, 255, .55);
   color: var(--primary-dark);
-  font-size: 13px;
-  font-weight: 700;
+}
+.topic-card-icon {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4f7fa;
+}
+.topic-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.topic-card-icon.fallback {
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.topic-card-name {
+  overflow: hidden;
+  max-width: 148px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .article-layout-wrap {
   padding-bottom: 80px;
@@ -479,11 +513,11 @@ img { display: block; max-width: 100%; }
   align-items: start;
 }
 .article-right-rail {
-  min-width: 0;
-}
-.article-right-rail {
   position: sticky;
   top: 84px;
+  display: grid;
+  min-width: 0;
+  gap: 16px;
 }
 .article-layout .article-card {
   overflow: hidden;
@@ -554,10 +588,15 @@ img { display: block; max-width: 100%; }
   background: #f7fbff;
   color: #617084;
 }
+.author-widget,
+.toc-widget {
+  border: 1px solid #e3ebf4;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(47, 58, 69, .04);
+}
 .author-widget {
-  margin: 0 0 22px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
+  padding: 16px;
 }
 .author-widget-link {
   display: grid;
@@ -592,18 +631,18 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 .toc-widget {
-  padding-top: 2px;
+  padding: 16px 16px 14px;
 }
 .toc-widget h2 {
-  margin: 0 0 10px;
-  color: #7a8797;
-  font-size: 12px;
+  margin: 0 0 11px;
+  color: #526173;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
 }
 .toc-widget a {
   display: block;
-  padding: 5px 0 5px 12px;
+  padding: 6px 0 6px 12px;
   border-left: 2px solid #dfe8f2;
   color: #7b8794;
   font-size: 12px;
