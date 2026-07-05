@@ -1,62 +1,39 @@
 ---
 layout: default
 ---
-<section class="profile-hero" aria-label="Profile">
-  <div class="container hero-grid">
-    <aside class="profile-panel">
-      {% include profile-card.html %}
-    </aside>
-
-    <div class="hero-copy">
-      <p class="eyebrow">Personal Knowledge Base</p>
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
-      <div class="hero-actions" aria-label="Primary links">
-        <a class="button primary" href="#articles">글 읽기</a>
-        <a class="button ghost" href="{{ '/about/' | relative_url }}">프로필 보기</a>
+<header class="user-header">
+  <div class="container user-profile">
+    <div class="avatar-wrap">
+      <img class="user-avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
+    </div>
+    <div class="user-main">
+      <div class="user-upper">
+        <h1>{{ site.profile.name }}</h1>
+        <a class="icon-button" href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">RSS</a>
       </div>
+      <p>{{ site.profile.bio }}</p>
     </div>
   </div>
-</section>
+</header>
 
-<section class="container content-grid" id="articles">
-  <div class="feed-column">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Articles</p>
-        <h2>최근 글</h2>
-      </div>
-      <span class="post-count">{{ site.posts | size }} posts</span>
-    </div>
+<div class="container tabs-container">
+  <nav class="tabs" aria-label="Profile sections">
+    <a aria-selected="true" href="{{ '/' | relative_url }}">Articles<span>{{ site.posts | size }}</span></a>
+    <a aria-selected="false" href="#">Scraps<span>0</span></a>
+    <a aria-selected="false" href="#">Comments</a>
+  </nav>
+</div>
 
-    <div class="post-list">
+<section class="contents">
+  <div class="container">
+    <div class="post-grid-list" id="articles">
       {% for post in site.posts %}
         {% include post-card.html post=post %}
       {% else %}
-        <article class="empty-state">
-          <h3>아직 글이 없습니다.</h3>
-          <p><code>_posts</code> 폴더에 Markdown 파일을 추가해 첫 글을 발행해보세요.</p>
-        </article>
+        <div class="empty-state">
+          <p>No articles yet.</p>
+        </div>
       {% endfor %}
     </div>
   </div>
-
-  <aside class="sidebar-column">
-    <section class="side-widget">
-      <h2>Topics</h2>
-      <div class="tag-cloud">
-        {% assign tags = site.tags | sort %}
-        {% for tag in tags %}
-          <a href="{{ '/tags/#' | relative_url }}{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
-        {% else %}
-          <span>#jekyll</span><span>#blog</span><span>#notes</span>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="side-widget">
-      <h2>Now</h2>
-      <p>작게 배운 것을 자주 기록하고, 시간이 지나도 다시 읽기 쉬운 글을 모읍니다.</p>
-    </section>
-  </aside>
 </section>

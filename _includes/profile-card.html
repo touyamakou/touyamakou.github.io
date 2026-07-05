@@ -1,14 +1,8 @@
 <div class="profile-card {% if include.compact %}compact{% endif %}">
-  <img class="avatar" src="{{ site.profile.avatar | relative_url }}" alt="{{ site.profile.name }} avatar">
+  <img class="avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
   <div class="profile-info">
     <h2>{{ site.profile.name }}</h2>
-    <p class="handle">{{ site.profile.handle }}</p>
     <p class="bio">{{ site.profile.bio }}</p>
-    <p class="location">{{ site.profile.location }}</p>
   </div>
-  <div class="social-links" aria-label="Social links">
-    {% if site.profile.links.github %}<a href="{{ site.profile.links.github }}">GitHub</a>{% endif %}
-    {% if site.profile.links.x %}<a href="{{ site.profile.links.x }}">X</a>{% endif %}
-    {% if site.profile.links.website %}<a href="{{ site.profile.links.website }}">Web</a>{% endif %}
-  </div>
+  <a class="rss-chip" href="{{ site.profile.links.rss | default: '/feed.xml' | relative_url }}" aria-label="RSS feed">RSS</a>
 </div>

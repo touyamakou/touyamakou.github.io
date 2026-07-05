@@ -1,6 +1,9 @@
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.profile.name | default: site.title }}</p>
-    <p>Built with Jekyll for GitHub Pages.</p>
+  <div class="wide-container footer-inner">
+    <a class="zenn-logo small" href="{{ '/' | relative_url }}" aria-label="Home">
+      <span class="zenn-mark">Z</span>
+      <span class="zenn-word">Zenn</span>
+    </a>
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.profile.name }}</p>
   </div>
 </footer>

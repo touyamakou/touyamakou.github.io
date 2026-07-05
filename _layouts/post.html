@@ -2,33 +2,18 @@
 layout: default
 ---
 <article class="post-shell">
-  <div class="container post-grid">
-    <aside class="post-author">
-      {% include profile-card.html compact=true %}
-    </aside>
-
-    <div class="article-card">
-      <header class="article-header">
-        <div class="article-emoji">{{ page.emoji | default: '📝' }}</div>
-        <div class="article-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
-          {% if page.tags %}
-            <span aria-hidden="true">·</span>
-            <span>{{ page.tags | join: ', ' }}</span>
-          {% endif %}
-        </div>
-        <h1>{{ page.title }}</h1>
-        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
-      </header>
-
-      <div class="article-body">
-        {{ content }}
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-emoji">{{ page.emoji | default: '📝' }}</div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+      <div class="article-meta">
+        <span>{{ page.author | default: site.profile.name }}</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
       </div>
+    </header>
+    <div class="article-body">
+      {{ content }}
     </div>
-
-    <aside class="post-actions" aria-label="Post actions">
-      <a class="round-action" href="{{ '/' | relative_url }}" title="Home">⌂</a>
-      <a class="round-action" href="#top" title="Top">↑</a>
-    </aside>
   </div>
 </article>

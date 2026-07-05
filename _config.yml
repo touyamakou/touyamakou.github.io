@@ -1,21 +1,19 @@
-title: "My Zenn Style Blog"
-description: "Zenn-inspired personal blog built with Jekyll."
-lang: ko
+title: "touyama"
+description: "ゲームプログラマー"
+lang: ja
 timezone: Asia/Tokyo
-url: ""
+url: "https://touyamakou.github.io"
 baseurl: ""
 permalink: /posts/:title/
 
 profile:
-  name: "Your Name"
-  handle: "@your_handle"
-  bio: "개발, 글쓰기, 배움을 기록하는 개인 블로그입니다."
-  avatar: "/assets/images/avatar.svg"
-  location: "Tokyo / Seoul"
+  name: "touyama"
+  handle: "@touyama"
+  bio: "ゲームプログラマー"
+  avatar: "https://static.zenn.studio/user-upload/avatar/2e5899f7fb.jpeg"
+  location: ""
   links:
-    github: "https://github.com/yourname"
-    x: "https://x.com/yourname"
-    website: "https://example.com"
+    rss: "/feed.xml"
 
 defaults:
   - scope:
@@ -23,7 +21,7 @@ defaults:
       type: "posts"
     values:
       layout: post
-      author: "Your Name"
+      author: "touyama"
 
 markdown: kramdown
 highlighter: rouge
