@@ -1,16 +1,5 @@
-{% assign brand_url = site.brand.url | default: '/' %}
 <footer class="site-footer">
   <div class="wide-container footer-inner">
-    <a class="zenn-logo small" href="{{ brand_url | relative_url }}" aria-label="{{ site.brand.title | default: site.title }} home">
-      <span class="zenn-mark">
-        {% if site.brand.icon_image and site.brand.icon_image != '' %}
-          <img src="{{ site.brand.icon_image | relative_url }}" alt="" aria-hidden="true">
-        {% else %}
-          {{ site.brand.icon_text | default: 'Z' }}
-        {% endif %}
-      </span>
-      <span class="zenn-word">{{ site.brand.title | default: site.title }}</span>
-    </a>
     <p>&copy; {{ 'now' | date: '%Y' }} {{ site.profile.name }}</p>
   </div>
 </footer>
