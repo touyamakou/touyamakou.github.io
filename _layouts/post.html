@@ -34,10 +34,13 @@ layout: default
               {% for topic in article_topics %}
                 {% assign topic_name = topic.name | default: topic %}
                 {% assign topic_image = topic.image %}
+                {% assign topic_icon = topic.icon %}
                 <a class="topic-card" href="{{ '/tags/#' | relative_url }}{{ topic_name | slugify }}">
                   <span class="topic-card-icon{% unless topic_image %} fallback{% endunless %}" aria-hidden="true">
                     {% if topic_image %}
                       <img src="{{ topic_image | relative_url }}" alt="">
+                    {% elsif topic_icon %}
+                      {{ topic_icon }}
                     {% else %}
                       {{ topic_name | slice: 0, 1 }}
                     {% endif %}

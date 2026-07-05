@@ -32,4 +32,18 @@ profile:
   avatar: "/assets/images/avatar.jpg"
 ```
 
-Put local images under `assets/images/`. Posts can override the social preview image with `image: "/assets/images/post-image.png"` in front matter. For topic icons, use `topics:` with `name` and optional `image`.
+Put local images under `assets/images/`. Posts can override the social preview image with `image: "/assets/images/post-image.png"` in front matter.
+
+## Post topic example
+
+Use `icon` for text or emoji icons. Use `image` only when you want an image file.
+
+```yml
+topics:
+  - name: CLI
+    icon: CLI
+  - name: VPN
+    icon: V
+  - name: Unity
+    image: /assets/images/topic-unity.png
+```
