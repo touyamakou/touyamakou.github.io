@@ -40,7 +40,7 @@ layout: default
       </main>
 
       <aside class="article-right-rail">
-        <section class="author-widget">
+        <section class="author-widget" aria-label="Author">
           <a class="author-widget-link" href="{{ '/' | relative_url }}">
             <img src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
             <div>
@@ -52,7 +52,7 @@ layout: default
 
         {% if page.toc %}
           <nav class="toc-widget" aria-label="Table of contents">
-            <h2>Contents</h2>
+            <h2>&#30446;&#27425;</h2>
             {% for item in page.toc %}
               <a href="#{{ item.id }}" class="toc-level-{{ item.level | default: 2 }}">{{ item.text }}</a>
             {% endfor %}
