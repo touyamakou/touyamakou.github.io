@@ -1,19 +1,72 @@
 ---
 layout: default
 ---
-<article class="post-shell">
-  <div class="article-container">
-    <header class="article-header">
-      <div class="article-emoji">{{ page.emoji | default: '📝' }}</div>
-      <h1>{{ page.title }}</h1>
-      {% if page.description %}<p>{{ page.description }}</p>{% endif %}
-      <div class="article-meta">
-        <span>{{ page.author | default: site.profile.name }}</span>
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+<article class="zenn-article">
+  <aside class="mobile-author-bar">
+    <div class="wide-container mobile-author-inner">
+      <a class="mobile-author-link" href="{{ '/' | relative_url }}">
+        <img src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
+        <span>{{ site.profile.name }}</span>
+      </a>
+    </div>
+  </aside>
+
+  <header class="zenn-article-header">
+    <div class="wide-container">
+      <div class="zenn-article-header-main">
+        <div class="article-emoji">{% if page.emoji %}{{ page.emoji }}{% else %}&#128221;{% endif %}</div>
+        <h1>{{ page.title }}</h1>
+        <div class="article-meta-line">
+          <span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time> Published</span>
+          {% if page.updated %}
+            <span class="updated-date">Updated {{ page.updated | date: "%Y/%m/%d" }}</span>
+          {% endif %}
+        </div>
+        {% if page.tags %}
+          <div class="article-topic-list">
+            {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+          </div>
+        {% endif %}
       </div>
-    </header>
-    <div class="article-body">
-      {{ content }}
+    </div>
+  </header>
+
+  <div class="wide-container article-layout-wrap">
+    <div class="article-layout">
+      <aside class="article-left-rail" aria-label="Article actions">
+        <div class="article-left-rail-inner">
+          <button class="like-button" type="button" aria-label="Like">&#9825;</button>
+          <span class="like-count">0</span>
+          <a class="share-button" href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" aria-label="Share on X">X</a>
+        </div>
+      </aside>
+
+      <main class="article-card">
+        <div class="article-body">
+          {{ content }}
+        </div>
+      </main>
+
+      <aside class="article-right-rail">
+        <section class="author-widget">
+          <a class="author-widget-link" href="{{ '/' | relative_url }}">
+            <img src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
+            <div>
+              <h2>{{ site.profile.name }}</h2>
+              <p>{{ site.profile.bio }}</p>
+            </div>
+          </a>
+        </section>
+
+        {% if page.toc %}
+          <nav class="toc-widget" aria-label="Table of contents">
+            <h2>Contents</h2>
+            {% for item in page.toc %}
+              <a href="#{{ item.id }}" class="toc-level-{{ item.level | default: 2 }}">{{ item.text }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+      </aside>
     </div>
   </div>
 </article>
