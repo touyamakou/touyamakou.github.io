@@ -17,7 +17,7 @@ layout: default
         <div class="article-emoji">{% if page.emoji %}{{ page.emoji }}{% else %}&#128221;{% endif %}</div>
         <h1>{{ page.title }}</h1>
         <div class="article-meta-line">
-          <span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time>に公開</span>
+          <span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time>&#12395;&#20844;&#38283;</span>
         </div>
       </div>
     </div>
@@ -27,6 +27,13 @@ layout: default
     <div class="article-layout">
 
       <main class="article-card">
+        {% if page.tags %}
+          <section class="topic-widget" aria-label="Topics">
+            <div class="article-topic-list">
+              {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+            </div>
+          </section>
+        {% endif %}
         <div class="article-body">
           {{ content }}
         </div>
@@ -42,15 +49,6 @@ layout: default
             </div>
           </a>
         </section>
-
-        {% if page.tags %}
-          <section class="topic-widget" aria-label="Topics">
-            <h2>Topics</h2>
-            <div class="article-topic-list">
-              {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
-            </div>
-          </section>
-        {% endif %}
 
         {% if page.toc %}
           <nav class="toc-widget" aria-label="Table of contents">
