@@ -1,24 +1,26 @@
 ---
 layout: default
 ---
-<header class="user-header">
-  <div class="container user-profile">
-    <div class="avatar-wrap">
-      <img class="user-avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
-    </div>
-    <div class="user-main">
-      <div class="user-upper">
-        <h1>{{ site.profile.name }}</h1>
+<div class="home-top">
+  <header class="user-header">
+    <div class="container user-profile">
+      <div class="avatar-wrap">
+        <img class="user-avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }} avatar" referrerpolicy="no-referrer">
       </div>
-      <p>{{ site.profile.bio }}</p>
+      <div class="user-main">
+        <div class="user-upper">
+          <h1>{{ site.profile.name }}</h1>
+        </div>
+        <p>{{ site.profile.bio }}</p>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="container tabs-container">
-  <nav class="tabs" aria-label="Profile sections">
-    <a aria-selected="true" href="{{ '/' | relative_url }}">Articles<span>{{ site.posts | size }}</span></a>
-  </nav>
+  <div class="container tabs-container">
+    <nav class="tabs" aria-label="Profile sections">
+      <a aria-selected="true" href="{{ '/' | relative_url }}">Articles<span>{{ site.posts | size }}</span></a>
+    </nav>
+  </div>
 </div>
 
 <section class="contents">

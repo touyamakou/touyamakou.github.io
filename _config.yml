@@ -12,6 +12,9 @@ brand:
   icon_image: "/assets/images/logo.png"
   url: "/"
 
+social_preview:
+  image: "/assets/images/logo.png"
+
 profile:
   name: "touyama"
   bio: "\u30B2\u30FC\u30E0\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC"
@@ -33,7 +36,6 @@ kramdown:
 
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
 
 exclude:
   - README.md

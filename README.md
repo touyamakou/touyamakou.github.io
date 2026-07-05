@@ -13,7 +13,7 @@ Then open `http://localhost:4000`.
 
 ## Customize
 
-Edit `_config.yml` for site, brand, and profile metadata.
+Edit `_config.yml` for site, brand, profile, and social preview metadata.
 
 ```yml
 brand:
@@ -21,10 +21,13 @@ brand:
   icon_text: "T"
   icon_image: "/assets/images/logo.png"
 
+social_preview:
+  image: "/assets/images/logo.png"
+
 profile:
   name: "touyama"
   bio: "..."
   avatar: "/assets/images/avatar.jpg"
 ```
 
-Put local images under `assets/images/`.
+Put local images under `assets/images/`. Posts can override the social preview image with `image: "/assets/images/post-image.png"` in front matter.
