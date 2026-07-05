@@ -1,15 +1,21 @@
 title: "touyama"
-description: "ゲームプログラマー"
+description: "\u30B2\u30FC\u30E0\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC"
 lang: ja
 timezone: Asia/Tokyo
 url: "https://touyamakou.github.io"
 baseurl: ""
 permalink: /posts/:title/
 
+brand:
+  title: "Zenn"
+  icon_text: "Z"
+  icon_image: ""
+  url: "/"
+
 profile:
   name: "touyama"
   handle: "@touyama"
-  bio: "ゲームプログラマー"
+  bio: "\u30B2\u30FC\u30E0\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC"
   avatar: "https://static.zenn.studio/user-upload/avatar/2e5899f7fb.jpeg"
   location: ""
   links:
