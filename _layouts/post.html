@@ -17,16 +17,8 @@ layout: default
         <div class="article-emoji">{% if page.emoji %}{{ page.emoji }}{% else %}&#128221;{% endif %}</div>
         <h1>{{ page.title }}</h1>
         <div class="article-meta-line">
-          <span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time> Published</span>
-          {% if page.updated %}
-            <span class="updated-date">Updated {{ page.updated | date: "%Y/%m/%d" }}</span>
-          {% endif %}
+          <span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time>に公開</span>
         </div>
-        {% if page.tags %}
-          <div class="article-topic-list">
-            {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
-          </div>
-        {% endif %}
       </div>
     </div>
   </header>
@@ -50,6 +42,15 @@ layout: default
             </div>
           </a>
         </section>
+
+        {% if page.tags %}
+          <section class="topic-widget" aria-label="Topics">
+            <h2>Topics</h2>
+            <div class="article-topic-list">
+              {% for tag in page.tags %}<a href="{{ '/tags/#' | relative_url }}{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+            </div>
+          </section>
+        {% endif %}
 
         {% if page.toc %}
           <nav class="toc-widget" aria-label="Table of contents">

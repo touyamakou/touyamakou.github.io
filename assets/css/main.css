@@ -1,5 +1,5 @@
 :root {
-  --bg: #eeeeee;
+  --bg: #f4f7fa;
   --surface: #ffffff;
   --surface-soft: #f8fafc;
   --text: #2f3a45;
@@ -178,7 +178,7 @@ img { display: block; max-width: 100%; }
 }
 
 .contents {
-  background: #eeeeee;
+  background: #f4f7fa;
   padding: 28px 0 72px;
 }
 .post-grid-list {
@@ -210,7 +210,7 @@ img { display: block; max-width: 100%; }
   height: 92px;
   place-items: center;
   border-radius: var(--radius);
-  background: #f1f8ff;
+  background: #f4f7fa;
   font-size: 44px;
 }
 .post-card-body {
@@ -430,7 +430,18 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   text-align: center;
 }
-.zenn-article-header .zenn-article-header h1 {
+.zenn-article-header .article-emoji {
+  display: grid;
+  width: 136px;
+  height: 136px;
+  margin: 0 auto 22px;
+  place-items: center;
+  border-radius: 24px;
+  background: transparent;
+  font-size: 104px;
+  line-height: 1;
+}
+.zenn-article-header h1 {
   margin: 0;
   color: #202b3a;
   font-size: clamp(32px, 5.4vw, 48px);
@@ -440,23 +451,27 @@ img { display: block; max-width: 100%; }
 }
 .article-meta-line {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px 14px;
-  margin-top: 18px;
-  color: #8c99a8;
-  font-size: 14px;
-  font-weight: 700;
+  margin-top: 16px;
+  color: #8b98a7;
+  font-size: 13px;
+  font-weight: 500;
 }
-.updated-date {
-  color: #9ca8b6;
+.topic-widget {
+  margin: 0 0 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.topic-widget h2 {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 800;
 }
 .article-topic-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
-  margin-top: 18px;
 }
 .article-topic-list a {
   display: inline-flex;
@@ -464,10 +479,11 @@ img { display: block; max-width: 100%; }
   min-height: 30px;
   padding: 0 12px;
   border-radius: 999px;
-  background: #e9f6ff;
+  background: #ffffff;
+  border: 1px solid var(--line);
   color: var(--primary-dark);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .article-layout-wrap {
   padding-bottom: 80px;
@@ -664,7 +680,13 @@ img { display: block; max-width: 100%; }
   .zenn-article-header {
     padding: 34px 0 24px;
   }
-  .zenn-article-header   .zenn-article-header h1 {
+  .zenn-article-header .article-emoji {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 16px;
+    font-size: 76px;
+  }
+  .zenn-article-header h1 {
     font-size: 30px;
   }
   .article-layout {
